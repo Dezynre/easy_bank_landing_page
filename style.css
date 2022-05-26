@@ -248,28 +248,44 @@ header {
     top: -100px;
 }
 
-@media screen and (min-width: 942px) { 
+@media screen and (min-width: 1000px) { 
     .hero {
         background-image: url("./images/bg-intro-desktop.svg");
-        background-size: 70%;
+        background-size: 67%;
+        background-position-x: 40rem;
+        background-position-y: -10rem;
         display: flex;
         flex-direction: row;
-        border: 3px solid yellow;
         align-items: center;
         padding: 2.5rem;
+        min-height: 35rem;
     }
     .hero picture {
         position: static;
-        border: 1px solid yellow;
         order: 2;
+        position: absolute;
+        width: 42rem;
+        right: -10rem;
+        top: -2rem
     }
     .hero aside {
+        width: 50%;
         align-items: flex-start;
-        border: 1px solid yellow;
         order: 1;
     }
     .hero aside p, .hero aside h1 {
         text-align: left;
+    }
+    .hero aside p {
+        padding: 4rem 0;
+    }
+}
+
+/* a media query to be applied at viewport between 1001px and 1284px*/
+
+@media screen and (min-width: 1000px) and (max-width: 1284px) {
+    .hero picture {
+        visibility: hidden;
     }
 }
 /* The following styles are associated with the features Section */
@@ -429,6 +445,7 @@ p {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 40px;
+    padding-bottom: 5rem;
 }
 
 .social {
@@ -534,4 +551,18 @@ p {
     }
 }
 
+
+/* the following styles are associated with the scroll animations */
+
+.animate_on_scroll {
+    position: relative;
+    transform: translateY(2em);
+    opacity: 0;
+    transition: 1s all ease;
+}
+
+.animate_on_scroll.active {
+    transform: translateY(0);
+    opacity: 1;
+}
 
